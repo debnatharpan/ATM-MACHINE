@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+    float x, y;
+    char ch;    //for instructions generate
+    printf("Enter The Initial Amount: ");
+    scanf("%f", &x);
+    printf("Enter\nC for Credit\nD for Debit\nB for Balance Check\n");
+    scanf("\n%c", &ch);
+    switch(ch)
+    {
+        case 'C':
+            printf("Enter The Credit Amount: ");
+            scanf("%f", &y);
+            x=x+y;
+            printf("New Amount=%f", x);
+            break;
+        case 'D':
+            printf("Enter The Debit Amount: ");
+            scanf("%f", &y);
+            if(x>y)
+            {
+                x=x-y;
+                printf("New Amount=%f", x);
+            }
+            else
+            {
+                printf("Insufficient Amount In Your Account.");
+            }
+            break;
+        case 'B':
+            printf("Amount In Your Account= %f", x);
+            break;
+        default:
+            printf("Choose Correct Option For Operation.");
+    }
+    return 0;
+}
